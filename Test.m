@@ -15,6 +15,7 @@ set_param('dashboardv2/Subsystem/Engine Selection','FontSize',num2str(size));
 set_param('dashboardv2/Subsystem/Unit Selection','FontSize',num2str(size));
 set_param('dashboardv2/Subsystem/Torque (Nm)','FontSize',num2str(size));
 set_param(strcat('dashboardv2/Subsystem/','Temp (', char(176),'C)'),'FontSize',num2str(size));
+%%set_param('dashboardv2/Subsystem/Display','Name', 'Intake Air Flow Rate (kg/s)');
 
 %{
 set_param(strcat('dashboardv2/Subsystem/Exhaust Temp (', char(176), 'C)'),'FontSize', num2str(size));
