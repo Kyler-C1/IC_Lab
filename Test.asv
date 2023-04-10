@@ -9,3 +9,5 @@ set_param('dashboardv2/Subsystem/Engine Torque (Nm)','FontSize', num2str(size));
 set_param('dashboardv2/Subsystem/Brake Power (kW)','FontSize', num2str(size));
 set_param('dashboardv2/Subsystem/Volumetric Efficiency','FontSize', num2str(size));
 set_param('dashboardv2/Subsystem/BSFC (kg//kJ)','FontSize', num2str(size));
+set_param('dashboardv2/Subsystem/Engine Speed (RPM)','FontSize', num2str(size));
+set_param('dashboardv2/Subsystem/Exhaust Temp (' + char(176) + ,'FontSize', num2str(size));
