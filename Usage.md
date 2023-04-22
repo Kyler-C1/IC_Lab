@@ -2,7 +2,7 @@
 
 This document provides instructions, tips, and general information regarding the 
 usage and development of the real-time data modeling dashboard for the Internal 
-Combustion Engine Laboratory at the University of Okalhoma. Created Spring 2023.
+Combustion Engine Laboratory at the University of Oklahoma. Created Spring 2023.
 
 
 
@@ -47,7 +47,7 @@ This section outlines the general usage of this tool.
 2. Close out of MATLAB.
     a. If prompted to save changes to the dashboard model, discard and do not save.
 3. All output files will be found in the directory containing the dashboard model.
-    a. Output files are in comma separated value format and contain headers describing the contenet of it's respective column.
+    a. Output files are in comma separated value format and contain headers describing the content of its respective column.
  
 <div style="page-break-after: always;"></div>
 
@@ -61,7 +61,7 @@ some tips, suggestions, and notes.
 #### MATLAB Version
 
 It is strongly recommended that the development team's machines, lab machines, and any other
-machines used in the process of developing the dashboard are running the same version of matlab, major and minor.
+machines used in the process of developing the dashboard are running the same version of MATLAB, major and minor.
 While possible to save models as a previous version, this complicates the process of collaboration
 and simply downloading and installing the latest version for all machines would solve this headache.
 
@@ -94,7 +94,7 @@ the tool. It is recommended to instead use a MATLAB Project, which can likely im
 existing model. A MATLAB Project appears to offer again more functionality and tools
 for managing the project and all related materials to the project. 
 
-### Subsytems Explained
+### Subsystems Explained
 
 Three subsystems exist in the current model. They are as follows:
 
@@ -102,7 +102,7 @@ Three subsystems exist in the current model. They are as follows:
 
 This subsystem contains the components that will visually display the data from
 the post processing subsystem. Note that all components are linked to a signal or
-value that is found within the `Post-Processing` subsytem. This was a purposeful
+value that is found within the `Post-Processing` subsystem. This was a purposeful
 design choice such that the `Data Input` subsystem could be entirely abstracted
 from the work done in the `Post-Processing` subsystem so that the implementation
 of Group 2's data collection work could be done with the least chance of impacting
@@ -118,8 +118,8 @@ one be interested in this. Second, the `Units` input is currently tied to a valu
 that has no effect on post-processing however the ability to change the units on
 the dashboard and in the output file would be nice. The ability to alter the units
 wihtin post processing is certainly doable by likely adding a filtering function
-to all the data before it is sent to the `File I/O` subsytem or displayed on the
-dashboard. The only problem for this is the labels on on the plots and displays of
+to all the data before it is sent to the `File I/O` subsystem or displayed on the
+dashboard. The only problem for this is the labels on the plots and displays of
 the dashboard. 
 
 #### Data Input
@@ -143,7 +143,7 @@ A smaller supplemental subsystem exists within the `Post Processing` subsystem.
 
 This subsystem exists within the post-processing subsystem. All output log generation,
 naming, and file creation operations take place in this subsystem. A key function block
-used for this subsytem was the `Triggered Subsystem` which takes a trigger input and
+used for this subsystem was the `Triggered Subsystem` which takes a trigger input and
 runs once when this input satisfies the condition of the trigger. In our case the trigger
 was set as a 'Rising' trigger meaning it is activated when the input moves from 0 to 1, but
 when the input returns from 1 to 0 the trigger condition is not satisfied. This was key because
@@ -151,14 +151,14 @@ the triggered subsystem is used to generate a new output file every time the sta
 pressed to begin data collection but not when data collection is stopped. 
 
 Another aspect of this subsystem that took considerable workarounds to achieve the
-desireed functionality was the output file name generation. The team was unable
+desired functionality was the output file name generation. The team was unable
 to implement a feature that would take a string input and pass that as a filename
 to the file writing function. The solution to this was to use as standardized file
-format using date and time as the indicator of uniqueness. MATLAB functions to recieve
+format using date and time as the indicator of uniqueness. MATLAB functions to receivee
 date and time were used and Simulink string functions were used to interpret these
 as strings and compose a string containing the whole filename. The filename was then
 encoded as ASCII and passed into the file writing function. This was done because 
-Simulink does not allow strings to be passed as signals to MATLAB Function blocks becasue
+Simulink does not allow strings to be passed as signals to MATLAB Function blocks because
 of some complicated issue about string length. From within the function, the ASCII encoded
 string was decoded and the outputs of the post-processing subsystem are written to the file.
 
@@ -166,7 +166,7 @@ string was decoded and the outputs of the post-processing subsystem are written 
 
 Within MATLAB/Simulink there are different methods of developing a GUI such as 
 this dashboard. The choice of using 'dashboard' components wihtin a Simulink model
-was not neccessarily the best or worst choice but was what the development team
+was not necessarily the best or worst choice but was what the development team
 determined to be the most effective use of our resources. Other methods certainly 
 exist and should be explored as a method of refining the current dashboard.
 
@@ -184,5 +184,5 @@ the document.
 
 Included in this directory is a document entitled 'DashboardReport.doxc' which 
 is a report generated by Simulink and includes an excruciating amount of detail
-about the design. The level of detail the generated report covers is likely unneccesary
+about the design. The level of detail the generated report covers is likely unnecesary
 and I sincerely hope that you never need to dig into this document however should you need to it exists.
